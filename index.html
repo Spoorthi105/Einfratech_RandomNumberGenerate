@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Password Generator</h1>
+        <label>
+            Password Length:
+            <!-- Set input type to number and restrict decimals, symbols -->
+            <input id="len" type="number" min="6" max="14" value="12" required oninput="this.setCustomValidity('');" 
+            oninvalid="this.setCustomValidity('Please enter a valid number between 6 and 14.')" />
+        </label>
+        <br />
+        <label>
+            <input id="lower" type="checkbox" checked /> Include Lowercase
+        </label>
+        <br />
+        <label>
+            <input id="upper" type="checkbox" checked /> Include Uppercase
+        </label>
+        <br />
+        <label>
+            <input id="nums" type="checkbox" checked /> Include Numbers
+        </label>
+        <br />
+        <label>
+            <input id="special" type="checkbox" checked /> Include Special Characters
+        </label>
+        <br />
+        <button class="btn" onclick="generate()">Generate Password</button>
+        <button class="btn" onclick="reset()">Reset</button>
+        <div class="output" id="passOut">Password appears here </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
